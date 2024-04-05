@@ -1,4 +1,3 @@
-// Header.js
 import React from 'react';
 import { Container, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
