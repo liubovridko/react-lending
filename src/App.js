@@ -1,8 +1,8 @@
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React from 'react';
 //import { Route,  Routes } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
 // import Home from './pages/Home';
@@ -16,26 +16,30 @@ import Home from './pages/Home';
 function App() {
   return (
     <LanguageProvider>
-       <Helmet>
-        <title>Home Page</title>
-        <meta name="description" content="This is the home page" />
-      </Helmet>
-       <main className='wrapper'>
-          <Header />
-            <div className='content'>
-            <Home/>
-           <>
-          {/* <Routes>
-            <Route exact path="/" component={Home} />
-            <Route path="/gallery" component={Gallery} />
-            <Route path="/service" component={Service} />
-            <Route path="/contacts" component={Contacts} />
-            <Route path="*" component={NotFound} />
-          </Routes> */}
-          </>
-          </div>
-          <Footer />
-        </main>
+      <HelmetProvider>
+           <Helmet prioritizeSeoTags>
+              <title>Titlle lending</title>
+              <meta property="og:title" content="A very important title"/>
+              <link rel="canonical" href="https://www.tacobell.com" />
+              <meta name="whatever" value="notImportant" />
+            </Helmet>
+            <main className='wrapper'>
+                <Header />
+                  <div className='content'>
+                  <Home/>
+                  <>
+                {/* <Routes>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/gallery" component={Gallery} />
+                  <Route path="/service" component={Service} />
+                  <Route path="/contacts" component={Contacts} />
+                  <Route path="*" component={NotFound} />
+                </Routes> */}
+                </>
+                </div>
+                <Footer />
+            </main>
+        </HelmetProvider>
   </LanguageProvider>
 );
 }
