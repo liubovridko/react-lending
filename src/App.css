@@ -1,10 +1,32 @@
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.13), transparent 35%), #020617;
 }
-.content {
-	box-sizing: border-box;
-	height: 100%;
-	padding-bottom: 90px;
+
+.hero-glow {
+  animation: fadeIn 700ms ease-out;
+}
+
+.float-card {
+  animation: floatIn 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: translateY(6px);
+  }
 }
